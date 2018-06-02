@@ -1,9 +1,9 @@
-﻿{
+{
   "name": "Eleba",
-  "description": "饿了吧外卖网站",
+  "description": "仿饿了么商品与订单管理网站",
   "main": "ElebaServer.js",
   "authors": [
-    "qq93764393 jun266a chenqiaoYi"
+    "\"jun266a jun266a@foxmail.com\" \"qq93764393\" \"chenqiaoYi\""
   ],
   "license": "ISC",
   "homepage": "https://github.com/ElebaOrganzation/Eleba",
@@ -14,5 +14,11 @@
     "./webapp/bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular": "1.4.9",
+    "angular-bootstrap": "^2.5.0",
+    "angular-route": "1.4.9",
+    "bootstrap": "3.3.7"
+  }
 }

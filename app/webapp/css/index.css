@@ -8,9 +8,9 @@
     font-size: 22px; }
 
   .search_span {
-    font-size: 22px; }
+    font-size: 21px; }
 
-  .cart_span {
+  .index_cart_span {
     font-size: 13px; }
 
   .shoplist_title_content {
@@ -20,10 +20,10 @@
     font-size: 10px; }
 
   .shop_right_star {
-    font-size: 8px; }
+    font-size: 12px; }
 
   .shop_title_h3 {
-    font-size: 18px; }
+    font-size: 22px; }
 
   .shop_right_price {
     font-size: 13px; } }
@@ -32,9 +32,9 @@
     font-size: 25px; }
 
   .search_span {
-    font-size: 25px; }
+    font-size: 22px; }
 
-  .cart_span {
+  .index_cart_span {
     font-size: 17px; }
 
   .shoplist_title_content {
@@ -44,21 +44,21 @@
     font-size: 13px; }
 
   .shop_right_star {
-    font-size: 11px; }
+    font-size: 15px; }
 
   .shop_title_h3 {
-    font-size: 21px; }
+    font-size: 25px; }
 
   .shop_right_price {
     font-size: 16px; } }
 @media (min-width: 768px) and (max-width: 992px) {
   .index_top_title {
-    font-size: 30px; }
+    font-size: 34px; }
 
   .search_span {
     font-size: 30px; }
 
-  .cart_span {
+  .index_cart_span {
     font-size: 23px; }
 
   .shoplist_title_content {
@@ -68,21 +68,21 @@
     font-size: 18px; }
 
   .shop_right_star {
-    font-size: 13px; }
+    font-size: 17px; }
 
   .shop_title_h3 {
-    font-size: 23px; }
+    font-size: 27px; }
 
   .shop_right_price {
     font-size: 19px; } }
 @media (min-width: 992px) and (max-width: 1200px) {
   .index_top_title {
-    font-size: 40px; }
+    font-size: 45px; }
 
   .search_span {
     font-size: 40px; }
 
-  .cart_span {
+  .index_cart_span {
     font-size: 33px; }
 
   .shoplist_title_content {
@@ -92,21 +92,21 @@
     font-size: 23px; }
 
   .shop_right_star {
-    font-size: 16px; }
+    font-size: 20px; }
 
   .shop_title_h3 {
-    font-size: 26px; }
+    font-size: 30px; }
 
   .shop_right_price {
     font-size: 22px; } }
 @media (min-width: 1200px) {
   .index_top_title {
-    font-size: 50px; }
+    font-size: 55px; }
 
   .search_span {
     font-size: 50px; }
 
-  .cart_span {
+  .index_cart_span {
     font-size: 43px; }
 
   .shoplist_title_content {
@@ -117,30 +117,30 @@
     font-weight: 700; }
 
   .shop_right_star {
-    font-size: 22px; }
+    font-size: 26px; }
 
   .shop_title_h3 {
-    font-size: 50px; }
+    font-size: 54px; }
 
   .shop_right_price {
     font-size: 25px; } }
 body .elm_wrapper {
+  width: 100%;
   /**搴曢儴**/ }
   body .elm_wrapper .top {
-    width: 100vw;
-    height: 30vh;
-    padding: 2.666667vw 3.733333vw 0;
-    padding-top: 6vh;
-    padding-bottom: 3vh;
+    width: 100%;
+    height: 16vw;
+    padding: 0.666667vw 5.733333vw 0;
+    padding-bottom: 3vw;
     color: #ffffff;
     background-color: #0af; }
     body .elm_wrapper .top .top_value {
       width: 100%;
-      height: 18vh; }
+      height: 18vw; }
       body .elm_wrapper .top .top_value .top_value_label {
         width: 55.522vw;
-        height: 18vh;
-        line-height: 18vh;
+        height: 18vw;
+        line-height: 18vw;
         font-weight: 700;
         color: #ffffff; }
         body .elm_wrapper .top .top_value .top_value_label .top_value_svg1 {
@@ -155,78 +155,72 @@ body .elm_wrapper {
         body .elm_wrapper .top .top_value .top_value_label .top_value_svg2 {
           width: 1.866667vw;
           height: .933333vw;
-          margin-top: 2vh; }
+          margin-top: 2vw; }
   body .elm_wrapper #search-wrapper-top {
     position: fixed;
     top: 0px;
     left: 0px;
     display: none; }
   body .elm_wrapper .search-wrapper {
-    width: 100vw;
-    height: 22.6666667vh;
+    width: 100%;
+    height: 15vw;
     top: 0;
     z-index: 999;
     padding: 2vw 3.733333vw;
     margin: -.133333vw 0;
-    background-color: #0af;
-    padding-bottom: 34vh; }
+    background-color: #0af; }
     body .elm_wrapper .search-wrapper .search-wrapper_box {
-      width: 90vw;
-      height: 26vh;
+      width: 94vw;
+      height: 12vw;
       border-radius: .266667vw;
       background: #fff; }
       body .elm_wrapper .search-wrapper .search-wrapper_box .search-wrapper_a {
         display: block;
-        width: 100%;
-        height: 100%;
         text-decoration: none;
-        padding-top: 3vh;
         padding-left: 13vw; }
         body .elm_wrapper .search-wrapper .search-wrapper_box .search-wrapper_a .search_svg {
           float: left;
           display: block;
-          width: 8.532vw;
-          height: 15vh;
-          margin-top: 2vh; }
+          width: 6.532vw;
+          height: 15vw;
+          margin-top: -2vw; }
         body .elm_wrapper .search-wrapper .search-wrapper_box .search-wrapper_a .search_span {
           float: left;
           display: block;
           color: #999;
-          margin-top: 2vh; }
+          line-height: 12vw; }
   body .elm_wrapper .top_image {
-    width: 100vw;
-    height: 100%; }
+    width: 100%; }
     body .elm_wrapper .top_image .top_image_contain img {
       width: 100%;
       height: 100%; }
   body .elm_wrapper .index_carte {
     width: 100%;
-    height: 100%;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
     background-color: #ffffff; }
     body .elm_wrapper .index_carte .index_carte_contain {
-      width: 90vw; }
+      width: 90%;
+      margin: 0 auto; }
       body .elm_wrapper .index_carte .index_carte_contain .cart_a {
+        position: relative;
         display: block;
         float: left;
         width: 20%;
-        height: 40%;
+        height: 24vw;
         cursor: pointer;
         text-decoration: none; }
-        body .elm_wrapper .index_carte .index_carte_contain .cart_a img {
+        body .elm_wrapper .index_carte .index_carte_contain .cart_a .cart_container .cart_image {
           display: block;
-          width: 100%;
-          height: 90%; }
-        body .elm_wrapper .index_carte .index_carte_contain .cart_a .cart_span {
+          width: 100%; }
+        body .elm_wrapper .index_carte .index_carte_contain .cart_a .index_cart_span {
           display: block;
-          display: block;
-          margin-left: 20%;
+          margin-left: 4vw;
           color: #666; }
   body .elm_wrapper .shoplist_title {
     width: 100%;
-    height: 16vh;
-    margin-top: 8vh;
+    height: 4vw;
+    margin-top: -4vw;
     padding-left: 25vw; }
     body .elm_wrapper .shoplist_title .shoplist_title_content {
       display: block;
@@ -236,26 +230,26 @@ body .elm_wrapper {
         display: block;
         float: left;
         width: 14%;
-        height: 1vh;
-        margin-top: 5vh;
+        height: 1vw;
+        margin-top: 4vw;
         margin-right: 3vw;
         margin-left: 3vw;
         background-color: #999; }
       body .elm_wrapper .shoplist_title .shoplist_title_content .shoplist_title_span {
         display: block;
-        float: left; }
+        float: left;
+        margin-top: 3vw; }
   body .elm_wrapper .shoplist {
     width: 100%;
-    height: 100%;
-    padding-top: 5vh;
+    padding-top: 5vw;
     background-color: #ffffff; }
     body .elm_wrapper .shoplist .shoplist_content {
       width: 90%;
       height: 100%;
       margin: 0 auto; }
       body .elm_wrapper .shoplist .shoplist_content .shoplist_shop {
-        width: 100%;
-        height: 53vh;
+        width: 90vw;
+        height: 25vw;
         border-bottom: 1px solid slategray; }
         body .elm_wrapper .shoplist .shoplist_content .shoplist_shop .shoplist_top_top {
           display: block;
@@ -303,6 +297,8 @@ body .elm_wrapper {
                 font-weight: 700; }
             body .elm_wrapper .shoplist .shoplist_content .shoplist_shop .shoplist_top_top .shop_top_right .shop_right_star {
               display: block;
+              margin-top: 1vw;
+              margin-bottom: -1vw;
               width: 100%;
               height: 30%;
               position: relative; }
@@ -319,14 +315,14 @@ body .elm_wrapper {
               body .elm_wrapper .shoplist .shoplist_content .shoplist_shop .shoplist_top_top .shop_top_right .shop_right_star .shop_star_dang {
                 position: absolute;
                 bottom: 1vw;
-                left: 12vw;
+                left: 15vw;
                 color: #999; }
               body .elm_wrapper .shoplist .shoplist_content .shoplist_shop .shoplist_top_top .shop_top_right .shop_right_star .shop_niaosong {
                 display: block;
                 float: right;
                 width: 12vw;
-                height: 8vh;
-                line-height: 8vh;
+                height: 6vw;
+                line-height: 6vw;
                 text-align: center;
                 background-color: #0af;
                 color: #ffffff; }
@@ -337,36 +333,52 @@ body .elm_wrapper {
               body .elm_wrapper .shoplist .shoplist_content .shoplist_shop .shoplist_top_top .shop_top_right .shop_right_price .shop_price_left {
                 display: block;
                 float: left;
-                margin-top: 3vh; }
+                margin-top: 3vw; }
               body .elm_wrapper .shoplist .shoplist_content .shoplist_shop .shoplist_top_top .shop_top_right .shop_right_price .shop_price_right {
                 display: block;
                 float: right;
-                margin-top: 3vh; }
+                margin-top: 3vw; }
   body .elm_wrapper .footer {
+    width: 100%;
     box-shadow: 3px -3px 5px #eee;
     position: fixed;
     bottom: 0;
     left: 0;
     height: 16vw;
-    width: 100%;
     background-color: #fff;
     border-top: 1px solid #eee; }
-    body .elm_wrapper .footer .row {
+    body .elm_wrapper .footer .footer_content {
+      width: 90vw;
+      margin: 0 auto;
       height: 100%; }
-      body .elm_wrapper .footer .row .option-active {
+      body .elm_wrapper .footer .footer_content .option-active {
         color: #0085ff !important; }
-      body .elm_wrapper .footer .row .footer-option {
+      body .elm_wrapper .footer .footer_content .footer-option {
         position: relative;
         color: #a0a0a0; }
-        body .elm_wrapper .footer .row .footer-option .option-logo {
+        body .elm_wrapper .footer .footer_content .footer-option .option-logo {
           font-size: 7vw;
           position: absolute;
           left: 12.5vw;
           top: 2vw; }
-        body .elm_wrapper .footer .row .footer-option .option-text {
+        body .elm_wrapper .footer .footer_content .footer-option .option-text {
           font-size: 3vw;
           position: absolute;
           left: 13vw;
           top: 11vw; }
+body .ToTop {
+  position: fixed;
+  right: 4vw;
+  bottom: 20vw;
+  width: 11vw;
+  height: 11vw;
+  border-radius: 11vw;
+  background-color: #ffffff;
+  border: 1px solid #999; }
+  body .ToTop .ToTop_image {
+    width: 7vw;
+    height: 7vw;
+    margin-left: 1.5vw;
+    margin-top: 2vw; }
 
-/*# sourceMappingURL=index_header.css.map */
+/*# sourceMappingURL=index.css.map */

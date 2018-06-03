@@ -1,0 +1,101 @@
+body{
+  font-size: 24px;
+  //订单列表
+  .orderbody{
+    background-color: #f5f5f5;
+    width: 100%;
+    &:before{
+      height: 1.173333rem;
+      height: 11.733333vw;
+    }
+    &:after{
+      height: 2.173333rem;
+      height: 16.733333vw;
+    }
+    //订单卡片
+    .ordercard{
+      width:100%;
+      margin-top: 3vw;
+      height: 42vw;
+      .ordercard-body{
+        display: block;
+        height: 100%;
+        background-color: #fff;
+        .ordercard-left{
+          display: block;
+          height:30vw;
+          border-bottom: 1px solid #eee;
+          img{
+            width: 100%;
+            height: 11vw;
+            margin-top: 4vw;
+          }
+        }
+        .ordercard-right{
+          height: 30vw;
+          border-bottom: 1px solid #eee;
+          .ordercard-head{
+            width: 100%;
+            height: 16vw;
+            margin-top: 2vw;
+            position: relative;
+            border-bottom: 1px solid #eee;
+            .ordercard-title{
+              font-size: 5vw;
+              width: 70%;
+              a{
+                color: #000;
+                line-height: 11vw;
+              }
+              span{
+                margin-left: 5vw;
+                font-size:1vw;
+              }
+              .status{
+                font-size: 3vw;
+                position: absolute;
+                top: 4vw;
+                left: 52vw;
+              }
+              .datetime{
+               font-size: 3vw;
+               color: #999;
+             }
+            }
+          }
+          .ordercard-detail{
+            width: 100%;
+            height: 10vw;
+            margin-top: 2vw;
+            position: relative;
+            overflow: hidden;
+            .detail{
+              font-size: 4vw;
+              color:#808080;
+              margin-top: 1vw;
+            }
+            .price{
+              font-size: 4vw;
+              color:#111111;
+              float:right;
+              margin-right:9vw;
+            }
+          }
+        }
+        .ordercard-bottom{
+          height: 11vw;
+          padding-top: 2vw;
+          padding-right: 9vw;
+          .row{
+            button{
+              font-size: 3vw;
+              height: 8vw;
+              margin-right: 3vw;
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

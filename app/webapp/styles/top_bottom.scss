@@ -1,0 +1,75 @@
+body{
+  //顶部标题
+  .head{
+    width: 100%;
+    height: 1.173333rem;
+    height: 11.733333vw;
+    background-image: linear-gradient(90deg,#0af,#0085ff);
+    line-height: 1.173333rem;
+    line-height: 11.733333vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index:1000;
+    .head_left{
+      width: 1.173333rem;
+      width: 11.733333vw;
+      height: 1.173333rem;
+      height: 11.733333vw;
+      color: #fff;
+      font-size: 1em;
+      text-align: center;
+      line-height: 11.733333vw;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    h1{
+      color:#fff;
+      font-weight: 600;
+      font-size: 6vw;
+      margin:0;
+      position: absolute;
+      left: 50%;
+      top: 2vw;
+      transform: translateX(-50%);
+
+    }
+  }
+
+  //页面底部选项卡
+  .footer{
+    box-shadow: 3px -3px 5px #eee;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 16vw;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    .row{
+      height: 100%;
+      .option-active{
+        color:#0085ff !important;
+      }
+      .footer-option{
+        position: relative;
+        color: #a0a0a0;
+        .option-logo{
+          font-size:7vw ;
+          position: absolute;
+          left:12.5vw;
+          top:2vw;
+        }
+        .option-text{
+          font-size: 3vw;
+          position: absolute;
+          left: 13vw;
+          top:11vw;
+        }
+
+      }
+
+    }
+  }
+}

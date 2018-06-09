@@ -1,7 +1,5 @@
 (function(angular){
-	var app = angular.module('module.control.index',[
-		'ngRoute'	
-	]);
+	var app = angular.module('module.control.index',['ngRoute']);
 	app.config(['$routeProvider',function($routeProvider){
 		$routeProvider
 		.when('/index',{

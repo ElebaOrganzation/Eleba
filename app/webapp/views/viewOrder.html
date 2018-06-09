@@ -1,0 +1,44 @@
+
+<link rel="stylesheet" href="./styles/order.css">
+<div class="orderbody" ng-if="loginstatus">
+    <!--订单卡片-->
+    <div href="#" class="ordercard .container-fluid">
+        <div class="ordercard-body row">
+            <a href="#" class="ordercard-left col-xs-2">
+                <img src="https://fuss10.elemecdn.com/5/d4/8a35c9deb650799687783467d698fjpeg.jpeg" class="img-rounded" alt="">
+            </a>
+            <div class="ordercard-right col-xs-10">
+                <div class="ordercard-head">
+                    <div class="ordercard-title">
+                        <a href="#">隆江猪脚饭</a>
+                        <span class="glyphicon glyphicon-menu-right"></span>
+                        <p class="status">订单已送达</p>
+                        <p class="datetime">2018-05-28 12:06</p>
+                    </div>
+                </div>
+                <div class="ordercard-detail">
+                    <span class="detail">
+                        <span class="goodsname">鸡排套餐饭</span>×
+                        <span class="count">11</span>
+                    </span>
+                    <span class="price">￥11.50</span>
+                </div>
+            </div>
+            <div class="col-xs-12 ordercard-bottom container">
+                <div class="row">
+                    <button class="btn btn-info col-xs-3 col-xs-offset-5">再来一单</button>
+                    <button class="btn btn-warning col-xs-3">评价服务</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--未登录提示-->
+<div class="orderbody text-center" ng-if="!loginstatus">
+    <div class="waring">
+        <span>登录后查看外卖订单
+        </span>
+        <button class="btn btn-success" ng-click="toLogin()">立即登陆</button>
+    </div>
+</div>

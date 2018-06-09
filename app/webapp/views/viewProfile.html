@@ -1,0 +1,35 @@
+
+<link rel="stylesheet" href="./styles/profile.css">
+<div class="profile container-fluid">
+    <!--头部个人信息-->
+    <div class="header row" ng-click="toLogin()">
+        <img src="./image/perhead.png" alt="" class="head-img img-circle">
+        <a class="profile-info">{{username}}</a>
+        <a href=""></a>
+    </div>
+    <!--钱包余额-->
+    <div class="wallet row" ng-if="loginstatus">
+        <span class="wallettext col-xs-4 col-xs-offset-2">钱包：</span>
+        <span class="balance col-xs-6">{{balance|currency:"￥"}}</span>
+    </div>
+    <!--地址列表-->
+    <div class="address row" ng-if="loginstatus">
+        <div class="address_title col-xs-12">
+            <span class="glyphicon glyphicon-map-marker"></span>我的地址
+        </div>
+        <ul class="addresslist col-xs-12">
+            <li class="address_li" ng-repeat="addr in addresslist">
+                {{addr.address}}
+                <a href="#" class="glyphicon glyphicon-edit"></a>
+            </li>
+            <li class="address_li address_add text-center">
+                <span class="glyphicon glyphicon-plus"></span>新增收货地址
+            </li>
+        </ul>
+    </div>
+    <div class="text-center" ng-if="!loginstatus">请先登录后进行操作</div>
+    <!--退出按钮-->
+    <div class="exit row" ng-if="loginstatus">
+        <button class="exit_btn btn btn-default col-xs-12" ng-click="exit()">退出登录</button>
+    </div>
+</div>

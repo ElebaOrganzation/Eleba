@@ -5,6 +5,7 @@ const express = require("express"),//引用express框架
 //导入路由模块
 const routeUser = require("./routes/routeUserinfo"),
     routeOrder = require('./routes/routeOrderinfo');
+const shopinfoRoute = require("./routes/shopinforoute.js");
 
 const app = express();
 app.use(bodyParser.urlencoded({extended:false}));
@@ -23,6 +24,9 @@ app.post("/login",function (req,res) {
     //获取表单提交信息并做校验
     userctrl.loginCheck(res,req.query);
 });
+
+//路由操作
+app.use("/shopinfo",shopinfoRoute);
 app.use("/userinfo",routeUser);
 app.use("/orderinfo",routeOrder);
 

@@ -5,7 +5,7 @@
 const conn = mysql.createConnection({
     host:"127.0.0.1",
     user:"root",
-    password:"root",
+    password:"12345678",
     database:"eleba"
 });
 conn.connect();

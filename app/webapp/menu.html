@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>饿了么</title>
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+   		<style type="text/css">
+   			.cart{
+    			width: 46px;
+    			height: 46px;
+    			border-radius: 50%;
+    			background-color: black;
+    			border: 3px solid gray;
+    			padding: 5px;
+    			position: absolute;
+    			top: -10px;
+    			left: 15px;
+    			font-size: 30px;
+    		}
+   		</style>
+    </head>
+    <body ng-app="module.menu">
+    	<div class="container-fluid">
+    		<div class="row">
+    			<div class="panel panel-default">
+	    			<div class="panel-heading shop-header">
+	    				<img class="head-absolute" src="{{shopinfo.imgsrc}}"/>
+	    			</div>
+	    			<div class="panel-body shop-body">
+	    				<h3 class="text-center">{{shopinfo.name}}</h3>
+	    				<p class="text-center">{{shopinfo.grade}}月售{{shopinfo.sales}}单 商家配送 约{{shopinfo.duration}}分钟</p>
+	    				<p class="text-center"><small class="text-">{{shopinfo.summary}}</small></p>
+	    			</div>
+	    		</div>
+    		</div>
+    		<div class="row">
+	    		<div class="container">
+					<ul class="nav nav-tabs row text-center" role="tablist">
+					    <li class="active col-xs-4"><a href="#home"   role="tab" data-toggle="tab">点餐</a></li>
+					</ul>
+	    		</div>
+	    	</div>
+	    	<div class="row">
+	    		<div ng-view></div>
+	    	</div>
+    	</div>
+    		<nav class="navbar navbar-inverse navbar-fixed-bottom ">
+	    		<div class="cart">
+	    			<span class="glyphicon glyphicon-shopping-cart"></span>
+	    		</div>
+	    	</nav>
+		<script src="bower_components/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="bower_components/angular-route/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="scripts/service/serviceGoods.js" type="text/javascript" charset="utf-8"></script>
+		<script src="scripts/control/controlMenu.js" type="text/javascript" charset="utf-8"></script>
+    </body>
+</html>

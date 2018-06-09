@@ -1,0 +1,26 @@
+<div class="tab-content">
+	<div class="tab-pane active">
+		<div class="col-xs-3">
+			<nav class="menu">
+				<ul class="nav nav-tabs nav-justified">
+					<li ng-repeat="item in menu"><a href="#/{{item.name}}"></a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="col-xs-offset-3">
+			<div class="media" ng-repeat="item in goodsinfo | filter: {category : selector}">
+				<div class="media-left">
+				    <a href="" >
+				     	<img class="media-object" src="{{item.imgsrc}}" width="70px" height="70px">
+				    </a>
+				</div>
+				<div class="media-body">
+				    <h5 class="media-heading"><strong>{{item.name}}</strong></h5>
+					<p><small>{{item.summary}}</small></p>
+					<span>月售{{item.sales}}份</span><span>好评率{{item.praiserate}}%</span>
+					<p><span class="price">{{item.price | currency:'¥'}}</span><span  class="badge">+</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

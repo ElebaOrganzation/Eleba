@@ -7,7 +7,7 @@
             // 向服务器请求用户地址信息
             $http({
                 method:"post",
-                url:"/orderinfo",
+                url:"/orderinfo/get",
                 params:{
                     userid:window.localStorage.getItem("userid"),
                 }

@@ -4,11 +4,9 @@
 
     //路由处理
     app.config(["$routeProvider",function ($routeProvider) {
-        $routeProvider.when("/",{
+        $routeProvider.when("/profile",{
             controller:"profile",
             templateUrl:"../../views/viewProfile.html"
-        }).otherwise({
-            redirectTo:"/"
         });
     }]);
 

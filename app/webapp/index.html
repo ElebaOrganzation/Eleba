@@ -6,40 +6,48 @@
     <title>饿了吧-首页</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/top_bottom.css">
-    <link rel="stylesheet" href="styles/order.css">
 </head>
-<body ng-app="module.control.order">
+<body ng-app="index">
 
+<!--2rem:就是相对父元素的属性的2倍-->
+<!--vw: 相对于视窗的宽度，视窗的宽度是100vw-->
+<!--vh: 相对于视窗的高度，视窗的高度是100vh-->
+<!--vm: 相对于视窗的高度或宽度，取决于哪个更小-->
+<!--4.375vw 在视窗宽度为 320px 的时候，正好是 14px-->
+<!--现在页面上所有以 rem 为单位的属性都会随着屏幕的宽度变化而自动响应等比变化。-->
+    <div ng-view></div>
     <!--页面底部-->
-    <div class="footer container-fluid">
+    <div class="footer container-fluid" ng-controller="navCtrl">
         <div class="row">
-            <a href="/index.html" class="footer-option col-xs-4">
+            <a href="#/index" class="footer-option col-xs-4" ng-class="{'option-active':path.startsWith('/index')}">
                 <span class="option-logo glyphicon glyphicon-home"></span>
                 <span class="option-text">首页</span>
             </a>
-            <a href="/order.html" class="footer-option option-active col-xs-4">
+            <a href="#/order" class="footer-option col-xs-4" ng-class="{'option-active':path.startsWith('/order')}">
                 <span class="option-logo glyphicon glyphicon-list-alt"></span>
                 <span class="option-text">订单</span>
             </a>
-            <a href="/profile.html" class="footer-option  col-xs-4">
+            <a href="#/profile" class="footer-option col-xs-4" ng-class="{'option-active':path.startsWith('/profile')}">
                 <span class="option-logo glyphicon glyphicon-user"></span>
                 <span class="option-text">我的</span>
             </a>
         </div>
     </div>
 
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <!--<script src="./bower_components/jquery/dist/jquery.min.scripts"></script>-->
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <!--<script src="./bower_components/bootstrap/dist/scripts/bootstrap.min.scripts"></script>-->
     <!--angular以及angular-route -->
     <script src="./bower_components/angular/angular.min.js"></script>
     <script src="./bower_components/angular-route/angular-route.js"></script>
     <!--控制层和服务层-->
-    <script src="scripts/control/app.js"></script>
+    <script src="scripts/service/serviceIndex.js"></script>
+    <script src="scripts/control/controlIndex.js"></script>
     <script src="scripts/service/serviceOrder.js"></script>
     <script src="scripts/control/controlOrder.js"></script>
     <script src="scripts/service/serviceProfile.js"></script>
     <script src="scripts/control/controlProfile.js"></script>
-    <script src="scripts/service/indexProfile.js"></script>
-    <script src="scripts/control/indexProfile.js"></script>
-
-    <script src="scripts/control/app.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 </html>

@@ -6,7 +6,7 @@
             // 向服务器请求用户信息
             $http({
                 method:"post",
-                url:"/userinfo",
+                url:"/userinfo/get",
                 params:{
                     name:window.localStorage.getItem("username"),
                 }
@@ -24,7 +24,7 @@
             // 向服务器请求用户地址信息
             $http({
                 method:"post",
-                url:"/addressinfo",
+                url:"/userinfo/address",
                 params:{
                     userid:window.localStorage.getItem("userid"),
                 }

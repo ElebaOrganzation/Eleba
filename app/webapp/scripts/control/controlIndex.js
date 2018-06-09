@@ -4,7 +4,7 @@
 		$routeProvider
 		.when('/index',{
 			controller:'controlIndex',
-			templateUrl:'./views/viewIndex.html'
+			templateUrl:'../views/viewIndex.html'
 		});
 	}]);
 	app.controller('controlIndex',['$scope',function($scope){

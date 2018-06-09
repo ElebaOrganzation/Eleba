@@ -14,7 +14,7 @@
             // 向服务器请求用户信息
             $http({
                 method:"post",
-                url:"/login",
+                url:"/userinfo/check",
                 params:{
                 	name:$scope.name,
 					pwd:$scope.pwd

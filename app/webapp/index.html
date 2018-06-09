@@ -1,60 +1,45 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-<head lang="en">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>饿了么主页面</title>
-    <!-- Bootstrap -->
-    <link href="./bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="styles/index.css" rel="stylesheet">
-    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
-    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
-    <!--[if lt IE 9]>
-    <script src="./bower_components/html5shiv/dist/html5shiv.min.js"></script>
-    <script src="./bower_components/respond/dest/respond.min.js"></script>
-    <![endif]-->
+    <title>饿了吧-首页</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/top_bottom.css">
+    <link rel="stylesheet" href="styles/order.css">
 </head>
-<body ng-app="index">
-<!--2rem:就是相对父元素的属性的2倍-->
-<!--vw: 相对于视窗的宽度，视窗的宽度是100vw-->
-<!--vh: 相对于视窗的高度，视窗的高度是100vh-->
-<!--vm: 相对于视窗的高度或宽度，取决于哪个更小-->
-<!--4.375vw 在视窗宽度为 320px 的时候，正好是 14px-->
-<!--现在页面上所有以 rem 为单位的属性都会随着屏幕的宽度变化而自动响应等比变化。-->
+<body ng-app="module.control.order">
 
-    <div class="elm_wrapper">
-        <div ng-view></div>
-        <!--页面底部-->
-        <div class="footer">
-            <div class="footer_content">
-                <a href="#" class="footer-option col-xs-4">
-                    <span class="option-logo glyphicon glyphicon-home"></span>
-                    <span class="option-text">首页</span>
-                </a>
-                <a href="#" class="footer-option option-active col-xs-4">
-                    <span class="option-logo glyphicon glyphicon-list-alt"></span>
-                    <span class="option-text">订单</span>
-                </a>
-                <a href="#" class="footer-option col-xs-4">
-                    <span class="option-logo glyphicon glyphicon-user"></span>
-                    <span class="option-text">我的</span>
-                </a>
-            </div>
-        </div>
-        <!--去顶部-->
-        <div class="ToTop">
-            <img src="image/totop.png" class="ToTop_image">
+    <!--页面底部-->
+    <div class="footer container-fluid">
+        <div class="row">
+            <a href="/index.html" class="footer-option col-xs-4">
+                <span class="option-logo glyphicon glyphicon-home"></span>
+                <span class="option-text">首页</span>
+            </a>
+            <a href="/order.html" class="footer-option option-active col-xs-4">
+                <span class="option-logo glyphicon glyphicon-list-alt"></span>
+                <span class="option-text">订单</span>
+            </a>
+            <a href="/profile.html" class="footer-option  col-xs-4">
+                <span class="option-logo glyphicon glyphicon-user"></span>
+                <span class="option-text">我的</span>
+            </a>
         </div>
     </div>
-    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <!--<script src="./bower_components/jquery/dist/jquery.min.js"></script>-->
-    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <!--<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
-    <script src="bower_components/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="bower_components/angular-route/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="scripts/control/controlIndex.js" type="text/javascript" charset="utf-8"></script>
-    <script src="scripts/index.js"></script>
+
+    <!--angular以及angular-route -->
+    <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="./bower_components/angular-route/angular-route.js"></script>
+    <!--控制层和服务层-->
+    <script src="scripts/control/app.js"></script>
+    <script src="scripts/service/serviceOrder.js"></script>
+    <script src="scripts/control/controlOrder.js"></script>
+    <script src="scripts/service/serviceProfile.js"></script>
+    <script src="scripts/control/controlProfile.js"></script>
+    <script src="scripts/service/indexProfile.js"></script>
+    <script src="scripts/control/indexProfile.js"></script>
+
+    <script src="scripts/control/app.js"></script>
 </body>
 </html>

@@ -1,9 +1,10 @@
 "use strict"
 
 const express = require("express"),//引用express框架
-    bodyParser=require("body-parser"),//引用bodyPaser模块
-    userctrl=require("./control/usercontrol.js"),
-    orderctrl =require("./control/odercontrol.js");
+    bodyParser=require("body-parser");//引用bodyPaser模块
+//导入路由模块
+const routeUser = require("./routes/routeUserinfo"),
+    routeOrder = require('./routes/routeOrderinfo');
 
 const app = express();
 app.use(bodyParser.urlencoded({extended:false}));
@@ -13,6 +14,7 @@ app.use(express.static("./webapp"));
 
 
 app.get("/",function (req,res) {
+    // req.location("/index.html");
 });
 
 //路由处理
@@ -21,15 +23,8 @@ app.post("/login",function (req,res) {
     //获取表单提交信息并做校验
     userctrl.loginCheck(res,req.query);
 });
-app.post("/userinfo",function (req,res) {
-    userctrl.getUserinfo(res,req.query);
-});
-app.post("/addressinfo",function (req,res) {
-    userctrl.getAddressinfo(res,req.query);
-});
-app.post("/orderinfo",function (req,res) {
-    orderctrl.getOrderinfo(res,req.query);
-})
+app.use("/userinfo",routeUser);
+app.use("/orderinfo",routeOrder);
 
 
 //监听服务器端口

@@ -7,6 +7,7 @@ const routeUser = require("./routes/routeUserinfo"),
     routeOrder = require('./routes/routeOrderinfo');
 const shopinfoRoute = require("./routes/shopinforoute.js");
 const routeGoodsinfo = require("./routes/routeGoodsinfo.js");
+const routeCategory = require("./routes/routeCategory.js");
 
 const app = express();
 app.use(bodyParser.urlencoded({extended:false}));
@@ -31,6 +32,7 @@ app.use("/shopinfo",shopinfoRoute);
 app.use("/userinfo",routeUser);
 app.use("/orderinfo",routeOrder);
 app.use("/goods",routeGoodsinfo);
+app.use("/category",routeCategory);
 
 
 //监听服务器端口

@@ -10,7 +10,7 @@ body {
     body .orderbody .ordercard {
       width: 100%;
       margin-top: 3vw;
-      height: 42vw; }
+      height: 100%; }
       body .orderbody .ordercard .ordercard-body {
         display: block;
         height: 100%;
@@ -18,14 +18,13 @@ body {
         body .orderbody .ordercard .ordercard-body .ordercard-left {
           display: block;
           height: 30vw;
-          border-bottom: 1px solid #eee;
           padding-left: 5vw; }
           body .orderbody .ordercard .ordercard-body .ordercard-left img {
             width: 100%;
             height: 11vw;
             margin-top: 4vw; }
         body .orderbody .ordercard .ordercard-body .ordercard-right {
-          height: 30vw;
+          height: 100%;
           border-bottom: 1px solid #eee; }
           body .orderbody .ordercard .ordercard-body .ordercard-right .ordercard-head {
             width: 100%;
@@ -50,21 +49,23 @@ body {
               body .orderbody .ordercard .ordercard-body .ordercard-right .ordercard-head .ordercard-title .datetime {
                 font-size: 3vw;
                 color: #999; }
-          body .orderbody .ordercard .ordercard-body .ordercard-right .ordercard-detail {
-            width: 100%;
-            height: 10vw;
-            margin-top: 2vw;
-            position: relative;
-            overflow: hidden; }
-            body .orderbody .ordercard .ordercard-body .ordercard-right .ordercard-detail .detail {
-              font-size: 4vw;
-              color: #808080;
-              margin-top: 1vw; }
-            body .orderbody .ordercard .ordercard-body .ordercard-right .ordercard-detail .price {
-              font-size: 4vw;
-              color: #111111;
-              float: right;
-              margin-right: 9vw; }
+          body .orderbody .ordercard .ordercard-body .ordercard-right .ordergoodslist {
+            height: 100%; }
+            body .orderbody .ordercard .ordercard-body .ordercard-right .ordergoodslist .ordercard-detail {
+              width: 100%;
+              height: 9vw;
+              margin-top: 1vw;
+              position: relative;
+              overflow: hidden; }
+              body .orderbody .ordercard .ordercard-body .ordercard-right .ordergoodslist .ordercard-detail .detail {
+                font-size: 3vw;
+                color: #808080; }
+              body .orderbody .ordercard .ordercard-body .ordercard-right .ordergoodslist .ordercard-detail .price {
+                font-size: 3vw;
+                color: #111111;
+                float: right;
+                margin-top: 1vw;
+                margin-right: 9vw; }
         body .orderbody .ordercard .ordercard-body .ordercard-bottom {
           height: 11vw;
           padding-top: 2vw;

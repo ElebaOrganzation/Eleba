@@ -8,14 +8,14 @@ const router = express.Router();
 
 router.post('/get',function (req,res) {
     //保存订单信息列表
-    let orderlist=[];
     orderinfodao.queryOrderByUserid(req.query.userid,function (results) {
+        let orderlist=[];
         for (let i = 0; i < results.length; i++) {
             //获取订单商品信息
-            let ordergoodslist = [];
             ordergoodsdao.queryGoodsByOrderid(results[i].id, function (goodsresults) {
-               console.log(results[i].id);
-                if (goodsresults.length == 0) {
+                let ordergoodslist = [];
+               console.log(i);
+                if (!goodsresults.length) {
                     console.log(results[i].id + "号订单没有商品！");
                 } else {
                     for (let j = 0; j < goodsresults.length; j++) {
@@ -23,7 +23,9 @@ router.post('/get',function (req,res) {
                     }
                     //组织完整订单信息
                     let orderdata = {
+                        id:results[i].id,
                         shopname: results[i].name,
+                        imgsrc:results[i].imgsrc,
                         date: results[i].date,
                         status: results[i].status,
                         shopid:results[i].shopid,
@@ -31,12 +33,17 @@ router.post('/get',function (req,res) {
                     }
                     //添加到订单列表
                     orderlist[orderlist.length] = orderdata;
+                    //输出数组
+                    if(i==results.length-1){
+                        console.log(orderlist);
+                        //发送到客户端
+                        res.json(orderlist);
+                    }
                 }
             });
+
         }
-        console.log(orderlist);
-        //发送到客户端
-        res.json(orderlist);
+
     });
 });
 

@@ -25,7 +25,24 @@
         }
         //获取订单信息
         orderinfo.getOrderinfo(function (orderlist) {
-            console.log(orderlist)
+            $scope.orderlist=orderlist;
+            console.log(orderlist);
+
         });
+        //获取每个订单的总价
+        $scope.sumPrice=function(orderid){
+            console.log(orderid);
+            let sumprice = 0;
+            for (let i=0;i<$scope.orderlist.length;i++){
+                console.log("orderid:"+$scope.orderlist[i].id);
+                if (orderid==$scope.orderlist[i].id){
+                    let order = $scope.orderlist[i];
+                    for (let j=0;j<order.goodslist.length;j++){
+                        sumprice+=order.goodslist[j].quantity*order.goodslist[j].price;
+                    }
+                    return sumprice;
+                }
+            }
+        }
     }]);
 })(angular);

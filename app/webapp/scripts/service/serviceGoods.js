@@ -13,11 +13,12 @@
             }).then(function successCallback(res) {
             	console.log(res.data);
                	angular.forEach(res.data,function (item) {
-					menu.push();
+					menu.push(item);
 				});
             }, function errorCallback(res) {
                 // 请求失败执行代码
             });
+            return menu;
 		};
 	}]);
 })(angular);

@@ -14,8 +14,8 @@
 		'$routeParams',
 		'serviceGoods',
 		function($scope,$routeParams,serviceGoods){
-			$scope.menu = serviceGoods.get($routeParams.shopId);
+			$scope.goodsinfo = serviceGoods.get($routeParams.shopId);
 			$scope.selector = $routeParams.selector;
-			console.log($routeParams.shopId);
+			console.log($scope.goodsinfo);
 		}]);
 })(angular);

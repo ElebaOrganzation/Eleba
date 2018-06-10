@@ -12,5 +12,10 @@ function queryshopinfo(callback){
         callback(results);
     })
 }
+function  queryshopinfoBytypeid(typeid,callback){
+    conn.query("select * from shopinfo where typeid=?",[typeid],function(err,results,fields){
+        callback(results);
+    })
+}
 
-module.exports={queryshopinfo};
+module.exports={queryshopinfo,queryshopinfoBytypeid};

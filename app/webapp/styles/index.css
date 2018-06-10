@@ -310,22 +310,22 @@ body {
               body .shoplist .shoplist_content .shoplist_shop .shoplist_top_top .shop_top_right .shop_right_star .shop_star_grade {
                 position: absolute;
                 bottom: 1vw;
-                left: 6vw;
+                left: 8vw;
                 color: #999; }
               body .shoplist .shoplist_content .shoplist_shop .shoplist_top_top .shop_top_right .shop_right_star .shop_star_mouth {
                 position: absolute;
                 bottom: 1vw;
-                left: 14vw;
+                left: 15vw;
                 color: #999; }
               body .shoplist .shoplist_content .shoplist_shop .shoplist_top_top .shop_top_right .shop_right_star .shop_star_dang {
                 position: absolute;
                 bottom: 1vw;
-                left: 20vw;
+                left: 23vw;
                 color: #999; }
               body .shoplist .shoplist_content .shoplist_shop .shoplist_top_top .shop_top_right .shop_right_star .shop_star_dangdang {
                 position: absolute;
                 bottom: 1vw;
-                left: 25vw;
+                left: 29vw;
                 color: #999; }
               body .shoplist .shoplist_content .shoplist_shop .shoplist_top_top .shop_top_right .shop_right_star .shop_niaosong {
                 display: block;

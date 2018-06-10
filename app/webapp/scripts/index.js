@@ -10,7 +10,7 @@
 	]);
 	app.config(['$routeProvider',function($routeProvider){
 		$routeProvider
-		.otherwise({redirectTo:'/index'});
+		.otherwise({redirectTo:'/index/all'});
 	}]);
 	app.controller("navCtrl",["$scope",'$location',function ($scope,$location) {
         $scope.$location=$location;

@@ -44,32 +44,32 @@
 <!--菜单-->
 <div class="index_carte">
     <div class="index_carte_contain container">
-        <div class="row">
-            <a href="#" role="button" class="cart_a">
+        <div class="row" id="index_type">
+            <a href="#/index/1" role="button" class="cart_a">
                 <div class="cart_container">
                     <img src="image/cart/cart1.jpeg" class="cart_image">
                 </div>
                 <span class="index_cart_span">美食</span>
             </a>
-            <a href="#" role="button" class="cart_a">
+            <a href="#/index/2" role="button" class="cart_a">
                 <div class="cart_container">
                     <img src="image/cart/cart2.jpeg" class="cart_image">
                 </div>
                 <span class="index_cart_span">晚餐</span>
             </a>
-            <a href="#" role="button" class="cart_a">
+            <a href="#/index/3" role="button" class="cart_a">
                 <div class="cart_container">
                     <img src="image/cart/cart3.webp" class="cart_image">
                 </div>
                 <span class="index_cart_span">果蔬生鲜</span>
             </a>
-            <a href="#" role="button" class="cart_a">
+            <a href="#/index/4" role="button" class="cart_a">
                 <div class="cart_container">
                     <img src="image/cart/cart4.jpeg" class="cart_image">
                 </div>
                 <span class="index_cart_span">医药健康</span>
             </a>
-            <a href="#" role="button" class="cart_a">
+            <a href="#/index/5" role="button" class="cart_a">
                 <div class="cart_container">
                     <img src="image/cart/cart5.jpeg" class="cart_image">
                 </div>
@@ -77,31 +77,31 @@
             </a>
         </div>
         <div class="row">
-            <a href="#" role="button" class="cart_a">
+            <a href="#/index/6" role="button" class="cart_a">
                 <div class="cart_container">
                     <img src="image/cart/cart6.webp" class="cart_image">
                 </div>
                 <span class="index_cart_span">浪漫鲜花</span>
             </a>
-            <a href="#" role="button" class="cart_a">
+            <a href="#/index/7" role="button" class="cart_a">
                 <div class="cart_container">
                     <img src="image/cart/cart7.jpeg" class="cart_image">
                 </div>
                 <span class="index_cart_span">麻辣烫</span>
             </a>
-            <a href="#" role="button" class="cart_a">
+            <a href="#/index/8" role="button" class="cart_a">
                 <div class="cart_container">
                     <img src="image/cart/cart8.jpeg" class="cart_image">
                 </div>
                 <span class="index_cart_span">地方菜系</span>
             </a>
-            <a href="#" role="button" class="cart_a">
+            <a href="#/index/9" role="button" class="cart_a">
                 <div class="cart_container">
                     <img src="image/cart/cart9.webp" class="cart_image">
                 </div>
                 <span class="index_cart_span">披萨意面</span>
             </a>
-            <a href="#" role="button" class="cart_a">
+            <a href="#/index/10" role="button" class="cart_a">
                 <div class="cart_container">
                     <img src="image/cart/cart10.webp" class="cart_image">
                 </div>
@@ -122,12 +122,11 @@
 <div class="shoplist">
     <div class="shoplist_content">
         <!--第一家商店-->
-        <div class="shoplist_shop" ng-repeat="item in shopinfo">
+        <div class="shoplist_shop" ng-repeat="item in shopinfo | orderBy : type : orderboolean | filter : json">
             <div class="shoplist_top_top">
                 <div class="shop_top_left">
                     <div class="shop_top_left_content">
                         <img ng-src="{{item.imgsrc}}" class="shop_image">
-                        <span class="shop_image_span">1</span>
                     </div>
                 </div>
                 <div class="shop_top_right">

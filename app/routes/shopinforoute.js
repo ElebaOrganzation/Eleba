@@ -15,4 +15,18 @@ router.post("/",function(req,res){
     })
 })
 
+
+//function updateshopinfo(type,res){
+//    if(type=="all"){
+//        shopinfoDao.queryshopinfo(function(results){
+//            //将数据写出去
+//            res.json(results);
+//        })
+//    }else{
+//        shopinfoDao.queryshopinfoBytypeid(typeid,function(results){
+//            res.json(results);
+//        })
+//    }
+//}
+
 module.exports = router;

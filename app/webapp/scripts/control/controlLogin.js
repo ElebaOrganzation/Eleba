@@ -31,7 +31,7 @@
 					window.localStorage.setItem("username",$scope.name);
 					window.localStorage.setItem("userid",res.data.userid);
                     setTimeout(function () {
-                        window.location.href="../../profile.html";
+                        window.location.href="index.html#/profile";
                     },1000);
 				}
             }, function errorCallback(res) {

@@ -30,7 +30,7 @@
         $scope.exit=function(){
             window.localStorage.removeItem("userid");
             window.localStorage.removeItem("username");
-            window.location.href="/profile.html";
+            window.location.reload();
         }
         //获取用户信息
         userinfo.getUserinfo(function (userinfo) {

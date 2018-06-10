@@ -12,7 +12,7 @@ router.post('/check',function (req,res) {
             return res.json({result:'fault',desc:'0'});
         }else{
             let result = results[0];
-            if (result.pwd===fields.pwd) {
+            if (result.pwd===req.query.pwd) {
                 return  res.json({result:'success',desc:'1',userid:result.id});
             }else{
                 return   res.json({result:'fault',desc:'2'});

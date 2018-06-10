@@ -15,3 +15,5 @@ router.post('/menu',function(req,res){
 		}
 	});
 });
+
+module.exports=router;

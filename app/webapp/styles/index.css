@@ -26,7 +26,10 @@
     font-size: 22px; }
 
   .shop_right_price {
-    font-size: 13px; } }
+    font-size: 13px; }
+
+  .searchshop {
+    font-size: 21px; } }
 @media (min-width: 500px) and (max-width: 768px) {
   .index_top_title {
     font-size: 25px; }
@@ -50,7 +53,10 @@
     font-size: 25px; }
 
   .shop_right_price {
-    font-size: 16px; } }
+    font-size: 16px; }
+
+  .searchshop {
+    font-size: 22px; } }
 @media (min-width: 768px) and (max-width: 992px) {
   .index_top_title {
     font-size: 34px; }
@@ -74,7 +80,10 @@
     font-size: 27px; }
 
   .shop_right_price {
-    font-size: 19px; } }
+    font-size: 19px; }
+
+  .searchshop {
+    font-size: 30px; } }
 @media (min-width: 992px) and (max-width: 1200px) {
   .index_top_title {
     font-size: 45px; }
@@ -98,7 +107,10 @@
     font-size: 30px; }
 
   .shop_right_price {
-    font-size: 22px; } }
+    font-size: 22px; }
+
+  .searchshop {
+    font-size: 40px; } }
 @media (min-width: 1200px) {
   .index_top_title {
     font-size: 55px; }
@@ -123,7 +135,10 @@
     font-size: 54px; }
 
   .shop_right_price {
-    font-size: 25px; } }
+    font-size: 25px; }
+
+  .searchshop {
+    font-size: 50px; } }
 body {
   width: 100%;
   /**搴曢儴**/ }
@@ -170,25 +185,35 @@ body {
     margin: -.133333vw 0;
     background-color: #0af; }
     body .search-wrapper .search-wrapper_box {
-      width: 94vw;
+      width: 90vw;
       height: 12vw;
       border-radius: .266667vw;
-      background: #fff; }
+      background: #fff;
+      position: relative; }
+      body .search-wrapper .search-wrapper_box .search_svg {
+        float: left;
+        display: block;
+        width: 6.532vw;
+        height: 15vw;
+        margin-top: -2vw;
+        position: absolute;
+        left: 4%;
+        z-index: 999; }
       body .search-wrapper .search-wrapper_box .search-wrapper_a {
         display: block;
+        width: 90vw;
+        height: 12vw;
         text-decoration: none;
-        padding-left: 13vw; }
-        body .search-wrapper .search-wrapper_box .search-wrapper_a .search_svg {
-          float: left;
-          display: block;
-          width: 6.532vw;
-          height: 15vw;
-          margin-top: -2vw; }
-        body .search-wrapper .search-wrapper_box .search-wrapper_a .search_span {
-          float: left;
-          display: block;
+        position: relative; }
+        body .search-wrapper .search-wrapper_box .search-wrapper_a .searchshop {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: 90vw;
+          height: 12vw;
           color: #999;
-          line-height: 12vw; }
+          line-height: 12vw;
+          text-align: center; }
   body .top_image {
     width: 100%; }
     body .top_image .top_image_contain img {
@@ -242,6 +267,7 @@ body {
   body .shoplist {
     width: 100%;
     padding-top: 5vw;
+    margin-bottom: 25vw;
     background-color: #ffffff; }
     body .shoplist .shoplist_content {
       width: 90%;

@@ -6,6 +6,7 @@ const express = require("express"),//引用express框架
 const routeUser = require("./routes/routeUserinfo"),
     routeOrder = require('./routes/routeOrderinfo');
 const shopinfoRoute = require("./routes/shopinforoute.js");
+const routeGoodsinfo = require("./routes/routeGoodsinfo.js");
 
 const app = express();
 app.use(bodyParser.urlencoded({extended:false}));
@@ -29,6 +30,7 @@ app.post("/login",function (req,res) {
 app.use("/shopinfo",shopinfoRoute);
 app.use("/userinfo",routeUser);
 app.use("/orderinfo",routeOrder);
+app.use("/menu",routeGoodsinfo);
 
 
 //监听服务器端口

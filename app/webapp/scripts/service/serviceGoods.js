@@ -3,12 +3,21 @@
 	app.service('serviceGoods',['$http',function($http){
 		var menu = [];
 		this.get = function(id){
-			$http.get('/goods/menu',{id})
-			.success(function(data,status,header,config){
-				angular.forEach(data,function (item) {
+			console.log('se'+id);
+			$http({
+                method : 'post',
+                url : '/goods/menu',
+                params : {
+                    shopid : id
+                }
+            }).then(function successCallback(res) {
+            	console.log(res.data);
+               	angular.forEach(res.data,function (item) {
 					menu.push();
 				});
-			});
+            }, function errorCallback(res) {
+                // 请求失败执行代码
+            });
 		};
 	}]);
 })(angular);

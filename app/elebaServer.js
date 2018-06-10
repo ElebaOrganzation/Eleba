@@ -30,7 +30,7 @@ app.post("/login",function (req,res) {
 app.use("/shopinfo",shopinfoRoute);
 app.use("/userinfo",routeUser);
 app.use("/orderinfo",routeOrder);
-app.use("/menu",routeGoodsinfo);
+app.use("/goods",routeGoodsinfo);
 
 
 //监听服务器端口

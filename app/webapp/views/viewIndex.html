@@ -124,6 +124,7 @@
         <!--第一家商店-->
         <div class="shoplist_shop" ng-repeat="item in shopinfo">
             <div class="shoplist_top_top">
+            <a href="menu.html#/menu/{{item.id}}/all">
                 <div class="shop_top_left">
                     <div class="shop_top_left_content">
                         <img ng-src="{{item.imgsrc}}" class="shop_image">
@@ -155,6 +156,7 @@
                         </div>
                     </div>
                 </div>
+            </a>
             </div>
         </div>
     </div>

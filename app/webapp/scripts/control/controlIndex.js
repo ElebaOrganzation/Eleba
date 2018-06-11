@@ -34,7 +34,27 @@
                 $scope.json={typeid:$routeParams.typeid,name:$scope.name}
             }
         }
-
-
 	}]);
+    //首页js效果
+    window.onscroll = function(){
+        //获取距离页面顶部的距离
+        var t = document.documentElement.scrollTop||document.body.scrollTop;
+        if(t<90){
+            document.getElementById('search-wrapper').style.display='block';
+            document.getElementById('search-wrapper-top').style.display='none';
+            document.getElementById('ToTop_image').style.display='none';
+        }else if(t>=90&&t<=200){
+            document.getElementById('search-wrapper').style.display='none';
+            document.getElementById('search-wrapper-top').style.display='block';
+            document.getElementById('ToTop_image').style.display='none';
+        }
+        else if(t>200){
+            document.getElementById('search-wrapper').style.display='none';
+            document.getElementById('search-wrapper-top').style.display='block';
+            document.getElementById('ToTop_image').style.display='block';
+            document.getElementById('ToTop_image').onclick=function(){
+                document.body.scrollTop = document.documentElement.scrollTop = 0;
+            }
+        }
+    }
 })(angular);

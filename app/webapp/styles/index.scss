@@ -220,7 +220,7 @@ body{
       margin: 0 auto;
       .shoplist_shop{
         width: 90vw;
-        height: 25vw;
+        height: 28vw;
         border-bottom: 1px solid slategray;
         .shoplist_top_top{
           display: block;
@@ -348,6 +348,7 @@ body{
   /**底部**/
 
   .ToTop{
+    display: none;
     position: fixed;
     right: 4vw;
     bottom: 20vw;

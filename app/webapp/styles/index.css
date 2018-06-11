@@ -275,7 +275,7 @@ body {
       margin: 0 auto; }
       body .shoplist .shoplist_content .shoplist_shop {
         width: 90vw;
-        height: 25vw;
+        height: 28vw;
         border-bottom: 1px solid slategray; }
         body .shoplist .shoplist_content .shoplist_shop .shoplist_top_top {
           display: block;
@@ -375,6 +375,7 @@ body {
                 float: right;
                 margin-top: 3vw; }
   body .ToTop {
+    display: none;
     position: fixed;
     right: 4vw;
     bottom: 20vw;

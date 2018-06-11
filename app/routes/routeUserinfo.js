@@ -53,6 +53,38 @@ router.post('/address',function (req,res) {
         }
     });
 })
-
+//修改地址信息
+router.post('/changeaddress',function (req,res) {
+    addressinfodao.updateAddressById(req.query.userid,req.query.newattr,function(results) {
+        if (results.affectedRows){
+            res.json({result:'fault'});
+        }else{
+            // 保存查询到的数据
+            res.json({result:'success',affectrows:results.affectedRows});
+        }
+    });
+})
+//插入地址信息
+router.post('/insertaddress',function (req,res) {
+    addressinfodao.insertAddress(req.query.userid,req.query.newattr,function(results) {
+        if (results.affectedRows){
+            res.json({result:'fault'});
+        }else{
+            // 保存查询到的数据
+            res.json({result:'success',affectrows:results.affectedRows});
+        }
+    });
+});
+//删除地址数据
+router.post('/deleteaddress',function (req,res) {
+    addressinfodao.deleteAddress(req.query.id,function(results) {
+        if (results.affectedRows){
+            res.json({result:'fault'});
+        }else{
+            // 保存查询到的数据
+            res.json({result:'success',affectrows:results.affectedRows});
+        }
+    });
+});
 // 将路由对象导出
 module.exports = router;

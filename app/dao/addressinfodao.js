@@ -11,4 +11,23 @@ function querAddressByUserid(id,callback){
     });
 };
 
-module.exports={querAddressByUserid};
+//通过id更新地址数据
+function updateAddressById(id,text,callback){
+    conn.query("update addressinfo set address =? where id = ?",[text,id],function (err,results,fields) {
+        callback(results);
+    });
+}
+
+//插入一行数据
+function insertAddress(id,text,callback){
+    conn.query("INSERT INTO addressinfo (userid,address) VALUES (?,?);",[id,text],function (err,results,fields) {
+        callback(results);
+    });
+}
+//删除一行数据
+function deleteAddress(id,callback){
+    conn.query("DELETE FROM addressinfo WHERE id=?",[id],function (err,results,fields) {
+        callback(results);
+    });
+}
+module.exports={querAddressByUserid,updateAddressById,insertAddress,deleteAddress};

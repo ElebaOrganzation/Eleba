@@ -35,5 +35,51 @@
                 // 请求失败执行代码
             });
         };
+        this.updateAddressinfo = function (id,address,callback) {
+            // 向服务器请求用户地址信息
+            $http({
+                method:"post",
+                url:"/userinfo/changeAddress",
+                params:{
+                    userid:id,
+                    newattr:address
+                }
+            }).then(function successCallback(res) {
+                callback(res);
+            }, function errorCallback(res) {
+                // 请求失败执行代码
+            });
+        }
+        //插入数据
+        this.insertAddressinfo= function(data){
+            // 向服务器请求插入用户地址信息
+            $http({
+                method:"post",
+                url:"/userinfo/insertAddress",
+                params:{
+                    userid:data.userid,
+                    newattr:data.address
+                }
+            }).then(function successCallback(res) {
+
+            }, function errorCallback(res) {
+                // 请求失败执行代码
+            });
+        };
+        //删除地址数据
+        this.deleteAddressinfo=function (addressid) {
+            // 向服务器请求插入用户地址信息
+            $http({
+                method:"post",
+                url:"/userinfo/deleteAddress",
+                params:{
+                    id:addressid
+                }
+            }).then(function successCallback(res) {
+                //请求成功执行代码
+            }, function errorCallback(res) {
+                // 请求失败执行代码
+            });
+        }
     }]);
 })(angular);

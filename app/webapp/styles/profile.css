@@ -46,12 +46,12 @@ body {
         padding: 0;
         margin: 0; }
         body .profile .address .addresslist .address_li {
-          font-size: 4.6vw;
+          font-size: 3.6vw;
           width: 100%;
           height: 12vw;
           line-height: 12vw;
           border-bottom: 1px solid lightgray; }
-          body .profile .address .addresslist .address_li a {
+          body .profile .address .addresslist .address_li span {
             float: right;
             margin-right: 4vw;
             margin-top: 2vw; }
@@ -64,5 +64,14 @@ body {
         height: 12vw;
         font-size: 5vw;
         color: red; }
+  body .modal .label {
+    color: #666;
+    font-size: 4vw; }
+    body .modal .label .modalHeader {
+      overflow: hidden;
+      color: #fff;
+      background-image: linear-gradient(90deg, #0af, #0085ff); }
+  body .block {
+    display: block; }
 
 /*# sourceMappingURL=profile.css.map */

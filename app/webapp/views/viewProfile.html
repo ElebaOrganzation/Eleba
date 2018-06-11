@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="./styles/profile.css">
+<link rel="stylesheet" href="../styles/profile.css">
 <!--页面头部-->
 <div class="head ">
     <div class="head_left"><a href="##" class="glyphicon glyphicon-menu-left"></a></div>
@@ -25,10 +25,10 @@
         <ul class="addresslist col-xs-12">
             <li class="address_li" ng-repeat="addr in addresslist">
                 {{addr.address}}
-                <a href="#" class="glyphicon glyphicon-edit"></a>
-            </li>
-            <li class="address_li address_add text-center">
-                <span class="glyphicon glyphicon-plus"></span>新增收货地址
+                    <span class="glyphicon glyphicon-edit" ng-click="showmodel(addr.id,addr.address)"></span>
+                </li>
+            <li class="address_li address_add text-center" ng-click="showmodel('insert','')">
+                <i class="glyphicon glyphicon-plus"></i>新增收货地址
             </li>
         </ul>
     </div>
@@ -37,4 +37,28 @@
     <div class="exit row" ng-if="loginstatus">
         <button class="exit_btn btn btn-default col-xs-12" ng-click="exit()">退出登录</button>
     </div>
+
+
 </div>
+
+<!--地址信息修改框-->
+<div class="modal" ng-class="{in:modal,block:modal}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header modalHeader">
+                <h4 class="modal-title">{{modalTitle}}</h4>
+            </div>
+            <div class="modal-body">
+                <label class="label">{{oldaddress}}</label>
+                <input type="text" class="form-control" placeholder="输入新地址" ng-model="newaddress">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" ng-click="comfirmEdit(editId)">保存</button>
+                <button type="button " class="btn btn-danger" ng-click="deleteAddr(editId)" ng-if="editId!='insert'">删除</button>
+                <button type="button" class="btn btn-warning" ng-click="hidemodal()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-backdrop in" ng-show="modal"></div>
+

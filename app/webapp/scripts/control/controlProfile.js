@@ -10,7 +10,7 @@
         });
     }]);
 
-    app.controller('profile',['$scope','$http','userinfo','addressinfo',function($scope,$http,userinfo,addressinfo){//placeHolder--profile
+    app.controller('profile',['$scope','userinfo','addressinfo',function($scope,userinfo,addressinfo){//placeHolder--profile
         //修改用户名
         if (window.localStorage.getItem("username")) {
             $scope.username = window.localStorage.getItem("username");
@@ -39,8 +39,65 @@
 
         });
         //  获取用户地址信息
-        addressinfo.getAddressinfo(function (addressinfo) {
-            $scope.addresslist=addressinfo;
-        })
+        ($scope.showAddressinfo=function(){
+            addressinfo.getAddressinfo(function (addressinfo) {
+                $scope.addresslist=addressinfo;
+            });
+        })();
+        // 修改地址信息
+        $scope.modal=false;
+        $scope.showmodel=function(id,text){
+            $scope.editId=id;
+            $scope.modalTitle="修改地址";
+            $scope.oldaddress='原内容：'+text;
+            if (id=='insert') {
+                $scope.modalTitle="新增地址信息";
+                $scope.oldaddress=''
+            }
+            $scope.newaddress="";
+            $scope.modal=true;
+
+        }
+        //隐藏模态框
+        $scope.hidemodal = function () {
+            $scope.modalTitle="";
+            $scope.oldaddress="";
+            $scope.modal = false;
+        }
+        //确认修改地址
+        $scope.comfirmEdit=function(operation){
+            //判断是否为空
+            if (!$scope.newaddress){
+                alert("更新内容不能为空！");
+                return;
+            }
+            if (operation!="insert"){
+                addressinfo.updateAddressinfo($scope.editId,$scope.newaddress,function (res) {
+                    console.log(res);
+                    if (res.result=="default"){
+                        alert("服务器异常，修改失败。");
+                    }
+                })
+            }else{
+                //获取提交数据
+                var addressdata ={
+                    userid:window.localStorage.getItem("userid"),
+                    address:$scope.newaddress
+                }
+                addressinfo.insertAddressinfo(addressdata,$scope.newaddress);
+            }
+            //刷新界面
+            $scope.showAddressinfo();
+            $scope.hidemodal();
+        }
+
+        //删除地址信息
+        $scope.deleteAddr=function(id){
+            addressinfo.deleteAddressinfo(id);
+            //刷新界面
+            $scope.showAddressinfo();
+            $scope.hidemodal();
+        }
     }]);
+
 })(angular);

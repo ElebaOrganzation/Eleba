@@ -1,7 +1,9 @@
 (function(angular){
 	var app = angular.module('menu',[
 		'ngRoute',
-		'module.service.goods'
+		'module.service.goods',
+        'module.service.index'
+
 	]);
 	app.config(['$routeProvider',function($routeProvider){
 		$routeProvider.when('/menu/:shopId',{
@@ -13,7 +15,13 @@
 		'$scope',
 		'$routeParams',
 		'serviceGoods',
-		function($scope,$routeParams,serviceGoods){
+        'shopinfo',
+		function($scope,$routeParams,serviceGoods,shopinfo){
+            //获取当前店铺信息
+            shopinfo.getShopinfoByid($routeParams.shopId,function(shopinfobyid){
+                $scope.shopdata=shopinfobyid[0];
+                console.log($scope.shopdata);
+            });
 			$scope.goodsinfo = serviceGoods.getMenu($routeParams.shopId);
 			$scope.category = serviceGoods.getCategory($routeParams.shopId);
 			$scope.select = function(value){

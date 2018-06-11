@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>饿了么</title>
         <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
-   		<style type="text/css">
+   		<link rel="stylesheet" href="styles/menu.css">
+        <style type="text/css">
    			.cart{
     			width: 46px;
     			height: 46px;
@@ -25,8 +26,8 @@
     	<div class="container-fluid">
     		<div class="row">
     			<div class="panel panel-default">
-	    			<div class="panel-heading shop-header">
-	    				<img class="head-absolute" src="{{shopinfo.imgsrc}}"/>
+	    			<div class="panel-heading shop-header topbac">
+	    				<img class="head-absolute" ng-src="{{shopdata.imgsrc}}"/>
 	    			</div>
 	    			<div class="panel-body shop-body">
 	    				<h3 class="text-center">{{shopinfo.name}}</h3>
@@ -55,7 +56,8 @@
 	    </nav>
 		<script src="bower_components/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="bower_components/angular-route/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="scripts/service/serviceGoods.js" type="text/javascript" charset="utf-8"></script>
+		<script src="scripts/service/serviceIndex.js" type="text/javascript" charset="utf-8"></script>
+        <script src="scripts/service/serviceGoods.js" type="text/javascript" charset="utf-8"></script>
 		<script src="scripts/control/controlMenu.js" type="text/javascript" charset="utf-8"></script>
     </body>
 </html>

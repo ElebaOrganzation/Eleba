@@ -8,25 +8,17 @@ const router = express.Router();
 //引入项目模块
 const shopinfoDao = require("../dao/shopinfodao");
 
-router.post("/",function(req,res){
+router.post("/all",function(req,res){
     shopinfoDao.queryshopinfo(function(results){
         //将数据写出去
         res.json(results);
     })
 })
+router.post("/shopid",function(req,res){
+    shopinfoDao.queryshopinfobyshopid(req.query.shopid,function(results){
+        res.json(results);
+    })
+})
 
-
-//function updateshopinfo(type,res){
-//    if(type=="all"){
-//        shopinfoDao.queryshopinfo(function(results){
-//            //将数据写出去
-//            res.json(results);
-//        })
-//    }else{
-//        shopinfoDao.queryshopinfoBytypeid(typeid,function(results){
-//            res.json(results);
-//        })
-//    }
-//}
 
 module.exports = router;

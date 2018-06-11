@@ -8,7 +8,7 @@
                 method:"post",
                 url:"/userinfo/get",
                 params:{
-                    name:window.localStorage.getItem("username"),
+                    name:window.localStorage.getItem("username")
                 }
             }).then(function successCallback(res) {
                 // 获取用户信息

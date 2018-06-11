@@ -14,10 +14,12 @@
         })
 
         $scope.typeid=$routeParams.typeid;
-        //$scope.typename="121212";
-        //$scope.setTypename=function(typename){
-        //    $scope.typename=typename;
-        //}
+        var str=["美食","晚餐","果蔬生鲜","医药健康","大牌五折","浪漫鲜花","麻辣烫","地方菜系","披萨意面","地方小吃"];
+        for(var i=0;i<str.length;i++){
+            if((i+1)==$scope.typeid){
+                $scope.typename=str[i];
+            }
+        }
         if($scope.keyword==""||$scope.keyword==undefined){
             if($routeParams.typeid=="all"){
                 $scope.json="";

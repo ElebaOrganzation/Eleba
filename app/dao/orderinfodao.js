@@ -10,5 +10,10 @@ function queryOrderByUserid(userid,callback){
         callback(results);
     });
 };
-
-module.exports={queryOrderByUserid};
+//插入一条订单数据
+function insertOrder(userid,shopid,date,callback){
+    conn.query("insert into orderinfo (userid,shopid,date) values(?,?,?)",[userid,shopid,date],function  (err,results,fields) {
+        callback(results);
+    });
+}
+module.exports={queryOrderByUserid,insertOrder};

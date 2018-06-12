@@ -34,5 +34,38 @@
             });
             return menu;
 		};
+
 	}]);
+	app.service('serviceOrder',['$http',function ($http) {
+        this.insertOrder=function(userid,shopid,date,callback){
+            $http({
+                method : 'post',
+                url : '/orderinfo/insert',
+                params : {
+                    userid :userid,
+                    shopid:shopid,
+                    date:date
+                }
+            }).then(function successCallback(res) {
+                callback(res.data);
+            }, function errorCallback(res) {
+                // 请求失败执行代码
+            });
+        }
+        this.insertOrderGoods=function(orderid,goodsinfo,callback){
+            $http({
+                method : 'post',
+                url : '/goods/ordergoods',
+                params : {
+                    orderid :orderid,
+                    goodsid:goodsinfo.goodsid,
+                    quantity:goodsinfo.quantity
+                }
+            }).then(function successCallback(res) {
+                callback(res.data);
+            }, function errorCallback(res) {// 请求失败执行代码
+            });
+        }
+    }]);
+
 })(angular);

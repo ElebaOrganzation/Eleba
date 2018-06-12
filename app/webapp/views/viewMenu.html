@@ -1,24 +1,92 @@
-<div class="tab-content">
-	<div class="tab-pane active">
-		<div class="col-xs-3">
-			<nav class="menu">
-				<ul class="nav nav-tabs nav-justified">
-					<li ng-repeat="item in category" ng-click="select(item.id)"><a href="JavaScript:void(0)">{{item.name}}</a></li>
-				</ul>
-			</nav>
+<div class="container-fluid">
+	<div class="row">
+		<div class="panel panel-default">
+			<div class="panel-heading shop-header topbac">
+				<img class="head-absolute img-rounded" src="{{shopdata.imgsrc}}"/>
+			</div>
+			<div class="panel-body shop-body">
+				<h3 class="text-center shopname">{{shopdata.name}}</h3>
+				<p class="text-center">评分:{{shopdata.grade}}&nbsp 月售{{shopdata.sales}}单 商家配送 约{{shopdata.duration}}分钟</p>
+				<p class="text-center"><small class="text-">{{shopdata.summary}}</small></p>
+			</div>
 		</div>
-		<div class="col-xs-offset-3">
-			<div class="media" ng-repeat="item in goodsinfo | filter:selector">
-				<div class="media-left">
-				    <img class="media-object" src="{{item.imgsrc}}" width="70px" height="70px">
+	</div>
+	<div class="row">
+		<div class="container">
+			<ul class="nav nav-tabs row text-center" role="tablist">
+				<li class="active col-xs-4">
+					<a href="javascript:void(0)">点餐</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="row">
+		<div class="tab-content">
+			<div class="tab-pane active">
+				<div class="col-xs-3">
+					<nav class="menu">
+						<ul class="nav nav-tabs nav-justified">
+							<li ng-repeat="item in category" ng-click="select(item.id)"><a href="JavaScript:void(0)">{{item.name}}</a></li>
+						</ul>
+					</nav>
 				</div>
-				<div class="media-body">
-				    <h5 class="media-heading"><strong>{{item.name}}</strong></h5>
-					<p><small>{{item.summary}}</small></p>
-					<span>月售{{item.sales}}份</span><span>好评率{{item.praiserate}}%</span>
-					<p><span class="price">{{item.price | currency:'¥'}}</span><span  class="badge">+</span></p>
+				<div class="col-xs-offset-3">
+					<div class="media" ng-repeat="item in goodsinfo | filter:selector">
+						<div class="media-left">
+							<img class="media-object" src="{{item.imgsrc}}" width="70px" height="70px">
+						</div>
+						<div class="media-body">
+							<h5 class="media-heading"><strong>{{item.name}}</strong></h5>
+							<p><small>{{item.summary}}</small></p>
+							<span>月售{{item.sales}}份</span><span>好评率{{item.praiserate}}%</span>
+							<p><span class="price">{{item.price | currency:'¥'}}</span><span  class="badge" ng-click="addGoods(item.id)">+</span></p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom cartbottom" ng-click="modal=!modal">
+	<div class="cartlogo">
+		<span class="glyphicon glyphicon-shopping-cart"></span>
+		<span class="goodscount text-center">{{sumQuantity()}}</span>
+	</div>
+	<span class="sumprice">总价：{{sumPrice()|currency:'￥' }}</span>
+</nav>
+
+<!--购物车模态框-->
+<div class="modal cartModal" ng-class="{in:modal,block:modal}">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header modalHeader modal-title">
+				<h4 class="modal-title GoodsCar">购物车</h4>
+				<span  class="glyphicon glyphicon-menu-right goback" ng-click="modal=false"></span>
+			</div>
+			<div class="modal-body">
+				<table class="table table-hover table-striped">
+					<tr>
+						<th class="goodsname">商品名称</th>
+						<th>商品价格</th>
+						<th>商品数量</th>
+					</tr>
+					<tr ng-repeat="goodsitem in cartlist">
+						<td class="goodsname">{{goodsitem.name}}</td>
+						<td>{{goodsitem.price*goodsitem.quantity|currency:"￥"}}</td>
+						<td>
+							<button class="optionGoods subGoods" ng-click="subQuantity(goodsitem.goodsid)">-</button>
+							<span class="goodsquantity text-center">{{goodsitem.quantity}}</span>
+							<button class="optionGoods addGoods" ng-click="addQuantity(goodsitem.goodsid)">+</button>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-success" ng-click="submitOrder()">结算</button>
+				<button type="button" class="btn btn-danger" ng-click="removeAll()">清空</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal-backdrop in" ng-show="modal">{{modal}}</div>

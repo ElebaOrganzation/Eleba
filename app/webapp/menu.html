@@ -8,52 +8,12 @@
         <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
    		<link rel="stylesheet" href="styles/menu.css">
         <style type="text/css">
-   			.cart{
-    			width: 46px;
-    			height: 46px;
-    			border-radius: 50%;
-    			background-color: black;
-    			border: 3px solid gray;
-    			padding: 5px;
-    			position: absolute;
-    			top: -10px;
-    			left: 15px;
-    			font-size: 30px;
-    		}
+
    		</style>
     </head>
     <body ng-app="menu">
-    	<div class="container-fluid">
-    		<div class="row">
-    			<div class="panel panel-default">
-	    			<div class="panel-heading shop-header topbac">
-	    				<img class="head-absolute" ng-src="{{shopdata.imgsrc}}"/>
-	    			</div>
-	    			<div class="panel-body shop-body">
-	    				<h3 class="text-center">{{shopinfo.name}}</h3>
-	    				<p class="text-center">{{shopinfo.grade}}月售{{shopinfo.sales}}单 商家配送 约{{shopinfo.duration}}分钟</p>
-	    				<p class="text-center"><small class="text-">{{shopinfo.summary}}</small></p>
-	    			</div>
-	    		</div>
-    		</div>
-    		<div class="row">
-	    		<div class="container">
-					<ul class="nav nav-tabs row text-center" role="tablist">
-					    <li class="active col-xs-4">
-					    	<a href="#home">点餐</a>
-					    </li>
-					</ul>
-	    		</div>
-	    	</div>
-	    	<div class="row">
-	    		<div ng-view></div>
-	    	</div>
-    	</div>
-    	<nav class="navbar navbar-inverse navbar-fixed-bottom ">
-	    	<div class="cart">
-	    		<span class="glyphicon glyphicon-shopping-cart"></span>
-	    	</div>
-	    </nav>
+		<div ng-view></div>
+		<!--js文件引入-->
 		<script src="bower_components/angular/angular.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="bower_components/angular-route/angular-route.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="scripts/service/serviceIndex.js" type="text/javascript" charset="utf-8"></script>

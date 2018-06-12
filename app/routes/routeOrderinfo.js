@@ -35,7 +35,6 @@ router.post('/get',function (req,res) {
                     orderlist[orderlist.length] = orderdata;
                     //输出数组
                     if(i==results.length-1){
-                        console.log(orderlist);
                         //发送到客户端
                         res.json(orderlist);
                     }
@@ -44,6 +43,17 @@ router.post('/get',function (req,res) {
 
         }
 
+    });
+});
+
+router.post('/insert',function (req,res) {
+    orderinfodao.insertOrder(req.query.userid,req.query.shopid,req.query.date,function (results) {
+        if (results.affectedRows==1){
+            // 保存查询到的数据
+            res.json({result:'success',desc:"1",orderid:results.insertId});
+        }else{
+            res.json({result:'fault',desc:"0"});
+        }
     });
 });
 

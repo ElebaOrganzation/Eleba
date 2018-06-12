@@ -10,5 +10,10 @@ function queryGoodsByOrderid(orderid,callback){
         callback(results);
     });
 };
+function insertOrderGoods(orderid,goodsid,quantity,callback){
+    conn.query("insert into ordergoods (orderid,goodsid,quantity) values (?,?,?);",[orderid,goodsid,quantity],function (err,results,fields) {
+        callback(results);
+    });
+}
 
-module.exports={queryGoodsByOrderid};
+module.exports={queryGoodsByOrderid,insertOrderGoods};

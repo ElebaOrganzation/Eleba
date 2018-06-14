@@ -39,7 +39,7 @@
 							<h5 class="media-heading"><strong>{{item.name}}</strong></h5>
 							<p><small>{{item.summary}}</small></p>
 							<span>月售{{item.sales}}份</span><span>好评率{{item.praiserate}}%</span>
-							<p><span class="price">{{item.price | currency:'¥'}}</span><span  class="badge" ng-click="addGoods(item.id)">+</span></p>
+							<p><span class="price">{{item.price | currency:'¥'}}</span><a href="javascript:void(0)"  class="badge" ng-click="addGoods(item.id)">+</a></p>
 						</div>
 					</div>
 				</div>
@@ -51,9 +51,10 @@
 <nav class="navbar navbar-inverse navbar-fixed-bottom cartbottom" ng-click="modal=!modal">
 	<div class="cartlogo">
 		<span class="glyphicon glyphicon-shopping-cart"></span>
-		<span class="goodscount text-center">{{sumQuantity()}}</span>
+		<span class="goodscount text-center" ng-if="sumQuantity()!=0">{{sumQuantity()}}</span>
 	</div>
-	<span class="sumprice">总价：{{sumPrice()|currency:'￥' }}</span>
+	<div class="btn btn-success account" ng-if="sumQuantity()!=0&&modal==false">去结算</div>
+	<span class="sumprice"  ng-if="sumQuantity()!=0">总价：{{sumPrice()|currency:'￥' }}</span>
 </nav>
 
 <!--购物车模态框-->

@@ -21,6 +21,13 @@ body{
   .cartbottom{
     z-index: 2000;
     background-color: #505052;
+    .account{
+      width: 152px;
+      height: 50px;
+      float: right;
+      font-size: 20px;
+      line-height: 39px ;
+    }
     .cartlogo{
       width: 46px;
       height: 46px;

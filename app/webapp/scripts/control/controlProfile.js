@@ -41,6 +41,10 @@
         //  获取用户地址信息
         ($scope.showAddressinfo=function(){
             addressinfo.getAddressinfo(function (addressinfo) {
+                if (addressinfo.result=='null') {
+                    $scope.addresslist=[];
+                    return;
+                }
                 $scope.addresslist=addressinfo;
             });
         })();

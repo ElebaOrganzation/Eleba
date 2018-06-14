@@ -31,10 +31,8 @@
         });
         //获取每个订单的总价
         $scope.sumPrice=function(orderid){
-            console.log(orderid);
             let sumprice = 0;
             for (let i=0;i<$scope.orderlist.length;i++){
-                console.log("orderid:"+$scope.orderlist[i].id);
                 if (orderid==$scope.orderlist[i].id){
                     let order = $scope.orderlist[i];
                     for (let j=0;j<order.goodslist.length;j++){
@@ -42,6 +40,17 @@
                     }
                     return sumprice;
                 }
+            }
+        }
+        //确认订单送达
+        $scope.confirmOrder=function(id){
+            if(confirm("确认收货？")){
+                orderinfo.changeOrderStatus(id,2,function (data) {
+                    if (data.desc==0){
+                        alert("操作失败，请重新操作！");
+                    }
+                    window.location.reload();
+                })
             }
         }
     }]);

@@ -10,6 +10,7 @@ function queryGoodsByOrderid(orderid,callback){
         callback(results);
     });
 };
+//插入订单商品信息
 function insertOrderGoods(orderid,goodsid,quantity,callback){
     conn.query("insert into ordergoods (orderid,goodsid,quantity) values (?,?,?);",[orderid,goodsid,quantity],function (err,results,fields) {
         callback(results);

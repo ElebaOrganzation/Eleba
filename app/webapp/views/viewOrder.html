@@ -48,8 +48,8 @@
             <div class="col-xs-12 ordercard-bottom container">
                 <div class="row">
                     <button class="btn btn-info col-xs-3 col-xs-offset-5">再来一单</button>
-                    <button class="btn btn-warning col-xs-3" ng-hide="item.status!=1">确认送达</button>
-                    <button class="btn btn-warning col-xs-3" ng-hide="item.status!=2">评价服务</button>
+                    <button class="btn btn-warning col-xs-3" ng-if="item.status==1" ng-click="confirmOrder(item.id)">确认送达</button>
+                    <button class="btn btn-warning col-xs-3" ng-if="item.status==2">评价服务</button>
                 </div>
             </div>
         </div>

@@ -57,6 +57,15 @@ router.post('/insert',function (req,res) {
     });
 });
 
-
+router.post('/update',function (req,res) {
+    orderinfodao.updateOrderStatusById(req.query.id,req.query.status,function (results) {
+        if (results.affectedRows==1){
+            // 保存查询到的数据
+            res.json({result:'success',desc:"1",orderid:results.insertId});
+        }else{
+            res.json({result:'fault',desc:"0"});
+        }
+    });
+});
 // 将路由对象导出
 module.exports = router;

@@ -39,7 +39,7 @@ body .cartbottom {
       width: 25px;
       height: 25px;
       line-height: 25px;
-      font-size: 5px;
+      font-size: 4vw;
       border-radius: 13px;
       background-color: red;
       color: #fff;
@@ -65,7 +65,7 @@ body .modalHeader {
 body .cartModal {
   transition: display 1s; }
   body .cartModal .goodsname {
-    width: 60%; }
+    width: 50%; }
   body .cartModal .optionGoods {
     width: 20px;
     height: 20px;

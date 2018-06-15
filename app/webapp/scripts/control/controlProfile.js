@@ -16,7 +16,6 @@
             $scope.username = window.localStorage.getItem("username");
             $scope.loginstatus=true;
         }else{
-            console.log("登录/注册");
             $scope.username= "登录/注册";
             $scope.loginstatus=false;
         }
@@ -39,7 +38,8 @@
 
         });
         //  获取用户地址信息
-        ($scope.showAddressinfo=function(){
+        $scope.showAddressinfo=function(){
+            console.log("获取地址信息")
             addressinfo.getAddressinfo(function (addressinfo) {
                 if (addressinfo.result=='null') {
                     $scope.addresslist=[];
@@ -47,7 +47,10 @@
                 }
                 $scope.addresslist=addressinfo;
             });
-        })();
+        };
+        if(window.localStorage.getItem("userid")){
+            $scope.showAddressinfo();
+        }
         // 修改地址信息
         $scope.modal=false;
         $scope.showmodel=function(id,text){

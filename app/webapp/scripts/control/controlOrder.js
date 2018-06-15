@@ -26,8 +26,6 @@
         //获取订单信息
         orderinfo.getOrderinfo(function (orderlist) {
             $scope.orderlist=orderlist;
-            console.log(orderlist);
-
         });
         //获取每个订单的总价
         $scope.sumPrice=function(orderid){

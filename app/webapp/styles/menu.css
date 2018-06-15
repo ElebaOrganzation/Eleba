@@ -73,13 +73,13 @@ body .cartModal {
     line-height: 15px; }
   body .cartModal .subGoods {
     background-color: #ffffff;
-    border-color: blue;
+    border-color: #0085ff;
     color: blue; }
   body .cartModal .goodsquantity {
     display: inline-block;
     width: 20px; }
   body .cartModal .addGoods {
-    background-color: blue;
+    background-color: #0085ff;
     color: #ffffff; }
 body .block {
   display: block; }
